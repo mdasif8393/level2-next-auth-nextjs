@@ -1,8 +1,11 @@
 import { Layout, Menu, Button } from "antd";
 const { Header } = Layout;
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react"
 
 const Navbar = () => {
+  const { data: session } = useSession()
+  console.log(session?.user);
   return (
     <Header
       style={{
